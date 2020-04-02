@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+[class*="col-"] {
+  padding-left: 16px;
+  padding-right: 16px;
+  min-width: 80px; }
+
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1180px !important; } }
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1312px !important; } }
+@media (max-width: 768px) {
+  .container {
+    max-width: 704px !important; } }
+@media (max-width: 360px) {
+  .container {
+    max-width: 328px !important; } }
+header {
+  display: flex;
+  flex-direction: column; }
+  header .header-upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  header .header-lower {
+    display: flex;
+    padding: 24px 0; }
+    header .header-lower .menu-items {
+      display: flex;
+      margin: 0 auto; }
+      header .header-lower .menu-items .menu-item {
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        color: #002B5B;
+        mix-blend-mode: normal;
+        margin-right: 24px; }
+        header .header-lower .menu-items .menu-item:last-of-type {
+          margin-right: 0; }
+
+.hero {
+  background-image: url("images/hero.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 840px;
+  max-height: calc(100vh - 75px);
+  margin-bottom: 128px; }
+  .hero .blue {
+    padding: 0 128px;
+    background-color: #002B5B;
+    max-width: 672px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .hero .blue p.title {
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: 3px;
+      color: #009DE8; }
+    .hero .blue h1 {
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 88px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #FFFFFF; }
+
+section {
+  width: 100%; }
+  section .overlaps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%; }
+    section .overlaps .top {
+      position: relative;
+      padding: 72px 56px;
+      max-width: 752px;
+      height: 430px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
+      z-index: 2;
+      margin-left: -128px; }
+      section .overlaps .top h2 {
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 52px;
+        color: #262930;
+        margin-bottom: 32px; }
+      section .overlaps .top p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 34px;
+        color: #4B4E57;
+        margin-bottom: 32px;
+        height: 136px;
+        overflow: hidden; }
+      section .overlaps .top a {
+        display: none;
+        flex-direction: row;
+        align-items: center; }
+        section .overlaps .top a p {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 34px;
+          text-decoration-line: underline;
+          color: #262930; }
+        section .overlaps .top a#more {
+          display: flex; }
+    section .overlaps .center {
+      max-width: 752px;
+      height: 686px;
+      position: relative;
+      z-index: 1;
+      width: calc(100% - 128px);
+      background-size: cover;
+      background-image: url(images/Nordecon-yearbook-1.jpeg);
+      background-position: center; }
+  section h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 34px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #009DE8;
+    margin-top: 192px;
+    margin-bottom: 48px;
+    text-align: center; }
+  section img {
+    margin: 0 auto;
+    width: 100%; }
+
+/*# sourceMappingURL=main.css.map */
