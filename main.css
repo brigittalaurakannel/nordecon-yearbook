@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 [class*="col-"] {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 0;
+  padding-right: 0;
   min-width: 80px; }
 
 @media (max-width: 1440px) {
@@ -17,6 +17,27 @@
 @media (max-width: 360px) {
   .container {
     max-width: 328px !important; } }
+a:hover {
+  color: initial;
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  /* Remove default bullets */ }
+
+ul li::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #009DE8;
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  font-size: 1.5em;
+  margin-left: -1.4em; }
+
 header {
   display: flex;
   flex-direction: column; }
@@ -27,7 +48,13 @@ header {
     align-items: center; }
   header .header-lower {
     display: flex;
-    padding: 24px 0; }
+    padding: 24px 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: 0,3s ease;
+    z-index: 10;
+    background-color: #ffffff; }
     header .header-lower .menu-items {
       display: flex;
       margin: 0 auto; }
@@ -42,6 +69,8 @@ header {
         margin-right: 24px; }
         header .header-lower .menu-items .menu-item:last-of-type {
           margin-right: 0; }
+    header .header-lower.sticky {
+      position: fixed; }
 
 .hero {
   background-image: url("images/hero.jpeg");
@@ -81,59 +110,157 @@ section {
   section .overlaps {
     display: flex;
     flex-direction: row;
-    align-items: center;
     width: 100%; }
-    section .overlaps .top {
-      position: relative;
-      padding: 72px 56px;
-      max-width: 752px;
-      height: 430px;
-      overflow: hidden;
-      background-color: #ffffff;
-      box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
-      z-index: 2;
-      margin-left: -128px; }
-      section .overlaps .top h2 {
-        font-family: 'Open Sans', sans-serif;
+  section .top {
+    position: relative;
+    padding: 72px 56px;
+    max-width: 752px;
+    background-color: #ffffff;
+    box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
+    z-index: 3;
+    margin-left: -192px;
+    margin-top: 128px;
+    height: 100%; }
+    section .top .longtext .moretext {
+      display: none; }
+      section .top .longtext .moretext.open {
+        display: block; }
+    section .top h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 52px;
+      color: #262930;
+      margin-bottom: 32px; }
+    section .top p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 34px;
+      color: #4B4E57;
+      margin-bottom: 32px; }
+      section .top p.bold {
+        font-family: Montserrat;
         font-style: normal;
-        font-weight: normal;
-        font-size: 36px;
-        line-height: 52px;
-        color: #262930;
-        margin-bottom: 32px; }
-      section .overlaps .top p {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 34px;
+        color: #4B4E57; }
+    section .top li {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 34px;
+      color: #262930; }
+    section .top a {
+      flex-direction: row;
+      align-items: center; }
+      section .top a img {
+        transform: rotate(0deg); }
+        section .top a img.rotate {
+          transform: rotate(180deg); }
+      section .top a p {
         font-family: Montserrat;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 34px;
-        color: #4B4E57;
-        margin-bottom: 32px;
-        height: 136px;
-        overflow: hidden; }
-      section .overlaps .top a {
-        display: none;
-        flex-direction: row;
-        align-items: center; }
-        section .overlaps .top a p {
+        text-decoration-line: underline;
+        color: #262930;
+        margin-bottom: 0;
+        margin-right: 16px;
+        display: inline-flex; }
+        section .top a p span {
           font-family: Montserrat;
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
           line-height: 34px;
-          text-decoration-line: underline;
-          color: #262930; }
-        section .overlaps .top a#more {
-          display: flex; }
-    section .overlaps .center {
-      max-width: 752px;
-      height: 686px;
-      position: relative;
-      z-index: 1;
-      width: calc(100% - 128px);
-      background-size: cover;
-      background-image: url(images/Nordecon-yearbook-1.jpeg);
-      background-position: center; }
+          color: #262930;
+          margin-bottom: 0; }
+          section .top a p span.close-sec {
+            display: none; }
+      section .top a#more p span.close-sec {
+        display: none; }
+      section .top a#more img {
+        transform: rotate(0deg); }
+        section .top a#more img.rotate {
+          transform: rotate(180deg); }
+  section .textarea .longtext .moretext {
+    display: none; }
+    section .textarea .longtext .moretext.open {
+      display: block; }
+  section .textarea h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 52px;
+    color: #262930;
+    margin-bottom: 32px; }
+  section .textarea p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 34px;
+    color: #4B4E57;
+    margin-bottom: 32px; }
+    section .textarea p.bold {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 34px;
+      color: #4B4E57; }
+  section .textarea li {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 34px;
+    color: #262930; }
+  section .textarea a {
+    flex-direction: row;
+    align-items: center; }
+    section .textarea a p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 34px;
+      text-decoration-line: underline;
+      color: #262930;
+      margin-bottom: 0;
+      margin-right: 16px;
+      display: inline-flex; }
+      section .textarea a p span {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 34px;
+        color: #262930;
+        margin-bottom: 0; }
+  section span.close-sec {
+    display: none; }
+  section .center {
+    max-width: 752px;
+    width: 100%;
+    height: 686px;
+    position: relative;
+    width: calc(100% - 128px);
+    background-size: cover;
+    background-image: url(images/Nordecon-yearbook-1.jpeg);
+    background-position: center; }
+    section .center .bottom {
+      position: absolute;
+      right: -64px;
+      bottom: -64px;
+      z-index: -1; }
   section h4 {
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -146,8 +273,106 @@ section {
     margin-top: 192px;
     margin-bottom: 48px;
     text-align: center; }
-  section img {
+  section .bigPic {
     margin: 0 auto;
     width: 100%; }
+  section#section-1 {
+    margin-bottom: 112px; }
+  section#section-3 {
+    margin-bottom: 182px; }
+    section#section-3 .textarea {
+      margin-right: 18px; }
+    section#section-3 .center {
+      background-image: url(images/Nordecon-woods.jpeg);
+      max-width: 640px;
+      width: 100%;
+      height: 640px; }
+      section#section-3 .center .bottom {
+        left: -64px;
+        right: initial; }
+  section#section-6 {
+    background-image: url(images/Nordecon-city.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    margin-bottom: 128px;
+    background-position: center; }
+    section#section-6 .top {
+      margin-left: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 128px 160px;
+      width: 50%;
+      max-width: unset; }
+  section#section-7 .overlaps {
+    margin-bottom: 320px; }
+  section#section-7 .textarea {
+    margin-right: 18px; }
+  section#section-7 .center {
+    background-image: url(images/Nordecon-building.jpeg);
+    max-width: 752px;
+    width: 100%;
+    height: 686px; }
+    section#section-7 .center .bottom {
+      right: -64px;
+      left: initial; }
+  section#section-11 {
+    background-image: url(images/Nordecon-digi.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    margin-bottom: 128px;
+    background-position: center; }
+    section#section-11 .top {
+      margin-left: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 128px 160px;
+      width: 50%;
+      max-width: unset; }
+  section#section-12 .overlaps {
+    margin-bottom: 192px; }
+  section#section-12 .textarea {
+    margin-right: 18px; }
+  section#section-12 .center {
+    background-image: url(images/Nordecon-tootajad.jpeg);
+    max-width: 752px;
+    width: 100%;
+    height: 686px; }
+    section#section-12 .center .bottom {
+      right: -64px;
+      left: initial; }
+  section#section-14 {
+    background-color: rgba(75, 78, 87, 0.05);
+    margin-bottom: 182px;
+    padding: 128px 0 144px 0; }
+    section#section-14 .textarea {
+      margin-right: 18px; }
+    section#section-14 .center {
+      background-image: url(images/Nordecon-bw.jpeg);
+      max-width: 640px;
+      width: 100%;
+      height: 640px; }
+      section#section-14 .center .bottom {
+        right: -64px;
+        left: initial; }
+  section .centeralign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 112px; }
+    section .centeralign p.bold {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 34px;
+      text-align: center;
+      color: #262930;
+      margin-bottom: 56px; }
 
 /*# sourceMappingURL=main.css.map */
