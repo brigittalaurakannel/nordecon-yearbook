@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 [class*="col-"] {
@@ -18,17 +19,35 @@
   .container {
     max-width: 328px !important; } }
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
   header .header-upper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; }
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   header .header-lower {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 24px 0; }
     header .header-lower .menu-items {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       margin: 0 auto; }
       header .header-lower .menu-items .menu-item {
@@ -55,9 +74,16 @@ header {
     background-color: #002B5B;
     max-width: 672px;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     .hero .blue p.title {
       font-family: 'Open Sans', sans-serif;
       font-style: normal;
@@ -79,9 +105,16 @@ header {
 section {
   width: 100%; }
   section .overlaps {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%; }
     section .overlaps .top {
       position: relative;
@@ -90,7 +123,8 @@ section {
       height: 430px;
       overflow: hidden;
       background-color: #ffffff;
-      box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
+      -webkit-box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
+              box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
       z-index: 2;
       margin-left: -128px; }
       section .overlaps .top h2 {
@@ -113,17 +147,25 @@ section {
         overflow: hidden; }
       section .overlaps .top a {
         display: none;
-        flex-direction: row;
-        align-items: center; }
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
         section .overlaps .top a p {
           font-family: Montserrat;
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
           line-height: 34px;
-          text-decoration-line: underline;
+          -webkit-text-decoration-line: underline;
+                  text-decoration-line: underline;
           color: #262930; }
         section .overlaps .top a#more {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex; }
     section .overlaps .center {
       max-width: 752px;
@@ -149,5 +191,162 @@ section {
   section img {
     margin: 0 auto;
     width: 100%; }
+
+/******** TÕNU CSS ********/
+ul {
+  margin: 0;
+  padding-left: 16px;
+  list-style: none;
+  /* Remove default bullets */ }
+  ul li {
+    font-family: Montserrat, sans-serif;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 34px;
+    color: #262930; }
+
+ul li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #009DE8;
+  /* Change the color */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  margin-right: 8px;
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */ }
+
+p {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 34px;
+  color: #4B4E57;
+  margin-bottom: 32px;
+  height: 136px;
+  overflow: hidden; }
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 52px;
+  color: #262930;
+  margin-bottom: 32px; }
+
+h3 {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 34px;
+  margin-bottom: 32px;
+  color: #262930; }
+
+body > section {
+  padding-top: 128px;
+  padding-bottom: 94px; }
+  body > section#key-figures {
+    background: url(images/nordecon-pattern.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain; }
+    body > section#key-figures * {
+      color: white; }
+  body > section .row {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1312px; }
+    body > section .row .image-wrap {
+      margin-right: 144px; }
+      body > section .row .image-wrap .image-inner {
+        position: relative; }
+      body > section .row .image-wrap img:first-of-type {
+        position: relative;
+        width: 100%;
+        max-width: 640px;
+        height: 640px;
+        -o-object-fit: cover;
+           object-fit: cover;
+        z-index: 1; }
+      body > section .row .image-wrap .pattern {
+        position: absolute;
+        bottom: -64px;
+        right: -64px;
+        z-index: 0;
+        max-height: 576px; }
+
+.section-gray {
+  background-color: rgba(75, 78, 87, 0.05); }
+
+.section-white {
+  background-color: white; }
+
+#accordion-2 .image-wrap {
+  margin-right: 0; }
+#accordion-2 .accordion-wrap {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  margin-right: 144px; }
+#accordion-2 .pattern {
+  right: unset;
+  left: -64px; }
+
+.accordion-wrap {
+  width: 100%;
+  max-width: 528px; }
+  .accordion-wrap .accordion {
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid rgba(75, 78, 87, 0.15);
+    color: #009DE8;
+    cursor: pointer;
+    padding: 32px 0;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 1px;
+    line-height: 34px;
+    -webkit-transition: 0.25s linear;
+    transition: 0.25s linear; }
+    .accordion-wrap .accordion p {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      margin: 0;
+      padding: 0; }
+    .accordion-wrap .accordion:last-of-type {
+      border-bottom: 1px solid rgba(75, 78, 87, 0.15); }
+    .accordion-wrap .accordion.active {
+      padding-bottom: 0; }
+      .accordion-wrap .accordion.active:after {
+        color: #009DE8;
+        content: "\2212"; }
+  .accordion-wrap .accordion:after {
+    content: '\002B';
+    color: #009DE8;
+    font-size: 35px;
+    font-weight: 100;
+    float: right;
+    margin-left: 5px; }
+  .accordion-wrap .faq-panel {
+    width: 100%;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.25s linear;
+    transition: max-height 0.25s linear; }
+    .accordion-wrap .faq-panel.active {
+      padding: 0 0 48px 0; }
+    .accordion-wrap .faq-panel p {
+      margin: 10px 0; }
+
+/* END OF ACCORDION */
 
 /*# sourceMappingURL=main.css.map */

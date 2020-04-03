@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-
+$light-blue: #009DE8;
+$dark-blue: #002B5B;
+$text-darker: #262930;
+$text-dark: #4B4E57;
+$gray: rgba(75, 78, 87, 0.05);
 [class*="col-"] {
   padding-left: 16px;
   padding-right: 16px;
@@ -26,7 +30,6 @@
     max-width: 328px!important;
   }
 }
-
 header{
   display: flex;
   flex-direction: column;
@@ -178,3 +181,178 @@ section{
     width: 100%;
   }
 }
+
+
+/******** TÕNU CSS ********/
+
+ul {
+  margin: 0;
+  padding-left: 16px;
+  list-style: none; /* Remove default bullets */
+  li {
+    font-family: Montserrat, sans-serif;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 34px;
+    color: $text-darker;
+  }
+}
+ul li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $light-blue; /* Change the color */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  margin-right: 8px;
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+p {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 34px;
+  color: $text-dark;
+  margin-bottom: 32px;
+  height: 136px;
+  overflow: hidden;
+}
+h2{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 52px;
+  color: $text-darker;
+  margin-bottom: 32px;
+}
+h3 {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 34px;
+  margin-bottom: 32px;
+  color: $text-darker;
+}
+
+body>section {
+  padding-top: 128px;
+  padding-bottom: 94px;
+  &#key-figures {
+    background:url(images/nordecon-pattern.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    * {
+      color: white;
+    }
+  }
+  .row {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1312px;
+    .image-wrap {
+      margin-right: 144px;
+      .image-inner {
+        position: relative;
+      }
+      img:first-of-type {
+        position: relative;
+        width: 100%;
+        max-width: 640px;
+        height: 640px;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .pattern {
+        position: absolute;
+        bottom: -64px;
+        right: -64px;
+        z-index: 0;
+        max-height: 576px;
+      }
+    }
+  }
+}
+.section-gray {
+  background-color: $gray;
+}
+.section-white {
+  background-color: white;
+}
+#accordion-2 {
+  .image-wrap {
+    margin-right: 0;
+  }
+  .accordion-wrap {
+    order: -1;
+    margin-right: 144px;
+  }
+  .pattern {
+    right: unset;
+    left: -64px;
+  }
+}
+.accordion-wrap {
+  width: 100%;
+  max-width: 528px;
+  .accordion {
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid rgba(75, 78, 87, 0.15);
+    color: $light-blue;
+    cursor: pointer;
+    padding: 32px 0;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 1px;
+    line-height: 34px;
+    transition: 0.25s linear;
+    p {
+      display: inline-flex;
+      margin: 0;
+      padding: 0;
+    }
+    &:last-of-type {
+      border-bottom: 1px solid rgba(75, 78, 87, 0.15);
+    }
+    &.active {
+      padding-bottom: 0;
+      &:after {
+        color: $light-blue;
+        content: "\2212";
+      }
+    }
+  }
+  .active, .accordion:hover {
+  }
+  .active {
+
+  }
+  .accordion:after {
+    content: '\002B';
+    color: $light-blue;
+    font-size: 35px;
+    font-weight: 100;
+    float: right;
+    margin-left: 5px;
+  }
+  .faq-panel {
+    width: 100%;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s linear;
+    &.active {
+      padding: 0 0 48px 0;
+    }
+    p {
+      margin: 10px 0;
+    }
+  }
+}
+/* END OF ACCORDION */
