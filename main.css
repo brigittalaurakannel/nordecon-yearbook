@@ -102,40 +102,33 @@ header {
       text-transform: uppercase;
       color: #FFFFFF; }
 
-section {
-  width: 100%; }
-  section .overlaps {
-    display: -webkit-box;
-    display: -ms-flexbox;
+/*section{
+  width: 100%;
+  & .overlaps{
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%; }
-    section .overlaps .top {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    & .top{
       position: relative;
       padding: 72px 56px;
       max-width: 752px;
       height: 430px;
       overflow: hidden;
       background-color: #ffffff;
-      -webkit-box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
-              box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
+      box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.04);
       z-index: 2;
-      margin-left: -128px; }
-      section .overlaps .top h2 {
+      margin-left: -128px;
+      & h2{
         font-family: 'Open Sans', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 36px;
         line-height: 52px;
         color: #262930;
-        margin-bottom: 32px; }
-      section .overlaps .top p {
+        margin-bottom: 32px;
+      }
+      & p{
         font-family: Montserrat;
         font-style: normal;
         font-weight: normal;
@@ -144,30 +137,27 @@ section {
         color: #4B4E57;
         margin-bottom: 32px;
         height: 136px;
-        overflow: hidden; }
-      section .overlaps .top a {
+        overflow: hidden;
+      }
+      & a{
         display: none;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center; }
-        section .overlaps .top a p {
+        flex-direction: row;
+        align-items: center;
+        & p{
           font-family: Montserrat;
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
           line-height: 34px;
-          -webkit-text-decoration-line: underline;
-                  text-decoration-line: underline;
-          color: #262930; }
-        section .overlaps .top a#more {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex; }
-    section .overlaps .center {
+          text-decoration-line: underline;
+          color: #262930;
+        }
+        &#more{
+          display: flex;
+        }
+      }
+    }
+    & .center{
       max-width: 752px;
       height: 686px;
       position: relative;
@@ -175,8 +165,10 @@ section {
       width: calc(100% - 128px);
       background-size: cover;
       background-image: url(images/Nordecon-yearbook-1.jpeg);
-      background-position: center; }
-  section h4 {
+      background-position: center;
+    }
+  }
+  & h4{
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -187,11 +179,13 @@ section {
     color: #009DE8;
     margin-top: 192px;
     margin-bottom: 48px;
-    text-align: center; }
-  section img {
+    text-align: center;
+  }
+  & img{
     margin: 0 auto;
-    width: 100%; }
-
+    //width: 100%;
+  }
+}*/
 /******** TÕNU CSS ********/
 ul {
   margin: 0;
@@ -225,8 +219,6 @@ p {
   font-size: 16px;
   line-height: 34px;
   color: #4B4E57;
-  margin-bottom: 32px;
-  height: 136px;
   overflow: hidden; }
 
 h2 {
@@ -250,12 +242,33 @@ h3 {
 body > section {
   padding-top: 128px;
   padding-bottom: 94px; }
+  body > section .small {
+    font-size: 14px;
+    line-height: 24px; }
   body > section#key-figures {
     background: url(images/nordecon-pattern.jpeg);
     background-repeat: no-repeat;
-    background-size: contain; }
-    body > section#key-figures * {
+    background-size: cover; }
+    body > section#key-figures .row * {
+      margin: 0;
       color: white; }
+    body > section#key-figures h4 {
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 1px; }
+    body > section#key-figures .figure-header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-bottom: 8px; }
+      body > section#key-figures .figure-header img {
+        margin-right: 24px; }
+    body > section#key-figures h2 {
+      color: white;
+      text-align: center; }
   body > section .row {
     margin: 0 auto;
     width: 100%;
